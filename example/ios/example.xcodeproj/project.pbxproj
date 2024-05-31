@@ -360,7 +360,7 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		A871C5FA87244217B6AC3763 /* RNSketchCanvas.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSketchCanvas.xcodeproj; path = "../node_modules/@terrylinla/react-native-sketch-canvas/ios/RNSketchCanvas/RNSketchCanvas.xcodeproj"; sourceTree = "<group>"; };
+		A871C5FA87244217B6AC3763 /* RNSketchCanvas.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSketchCanvas.xcodeproj; path = "../node_modules/@sc/react-native-sketch-canvas/ios/RNSketchCanvas/RNSketchCanvas.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		BC24F124295148DA9D55F01F /* RNCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		DED6C3C4210B490F00403623 /* whale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whale.png; sourceTree = "<group>"; };
@@ -1250,7 +1250,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = exampleTests/Info.plist;
@@ -1277,7 +1277,7 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = exampleTests/Info.plist;
@@ -1305,7 +1305,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = example/Info.plist;
@@ -1327,7 +1327,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = example/Info.plist;
@@ -1356,7 +1356,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = "example-tvOS/Info.plist";
@@ -1392,7 +1392,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules@terrylinla\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
+					"$(SRCROOT)..\node_modules@sc\neact-native-sketch-canvasiosRNSketchCanvasRNSketchCanvas",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 				);
 				INFOPLIST_FILE = "example-tvOS/Info.plist";
