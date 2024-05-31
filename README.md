@@ -27,13 +27,13 @@ A React Native component for drawing by touching on both iOS and Android.
 Install from `npm` (only support RN >= 0.40)
 
 ```bash
-npm install @sc/react-native-sketch-canvas --save
+npm install @csaurabh/react-native-sketch-canvas --save
 ```
 
 Link native code
 
 ```bash
-react-native link @sc/react-native-sketch-canvas
+react-native link @csaurabh/react-native-sketch-canvas
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ react-native link @sc/react-native-sketch-canvas
 import React, { Component } from "react";
 import { AppRegistry, StyleSheet, View } from "react-native";
 
-import { SketchCanvas } from "@sc/react-native-sketch-canvas";
+import { SketchCanvas } from "@csaurabh/react-native-sketch-canvas";
 
 export default class example extends Component {
   render() {
@@ -131,7 +131,7 @@ AppRegistry.registerComponent("example", () => example);
 import React, { Component } from "react";
 import { AppRegistry, StyleSheet, Text, View, Alert } from "react-native";
 
-import RNSketchCanvas from "@sc/react-native-sketch-canvas";
+import RNSketchCanvas from "@csaurabh/react-native-sketch-canvas";
 
 export default class example extends Component {
   render() {
