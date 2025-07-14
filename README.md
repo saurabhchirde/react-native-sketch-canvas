@@ -46,7 +46,7 @@ react-native link @csaurabh/react-native-sketch-canvas
 ### ● Using without UI component (for customizing UI)
 
 ```javascript
-import { AppRegistry, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { SketchCanvas } from "@csaurabh/react-native-sketch-canvas";
 
 export default () => {
@@ -67,8 +67,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF",
   },
 });
-
-AppRegistry.registerComponent("example", () => example);
 ```
 
 #### Properties
@@ -121,7 +119,7 @@ AppRegistry.registerComponent("example", () => example);
 <img src="https://i.imgur.com/O0vVdD6.png" height="400" />
 
 ```javascript
-import { AppRegistry, StyleSheet, Text, View, Alert } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import RNSketchCanvas from "@csaurabh/react-native-sketch-canvas";
 
 export default () => {
@@ -253,8 +251,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
-
-AppRegistry.registerComponent("example", () => example);
 ```
 
 #### Properties
