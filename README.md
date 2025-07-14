@@ -46,26 +46,18 @@ react-native link @csaurabh/react-native-sketch-canvas
 ### ● Using without UI component (for customizing UI)
 
 ```javascript
-import React, { Component } from "react";
 import { AppRegistry, StyleSheet, View } from "react-native";
-
 import { SketchCanvas } from "@csaurabh/react-native-sketch-canvas";
 
-export default class example extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection: "row" }}>
-          <SketchCanvas
-            style={{ flex: 1 }}
-            strokeColor={"red"}
-            strokeWidth={7}
-          />
-        </View>
+export default () => {
+  return (
+    <View style={styles.container}>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <SketchCanvas style={{ flex: 1 }} strokeColor={"red"} strokeWidth={7} />
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -95,7 +87,7 @@ AppRegistry.registerComponent("example", () => example);
 | onPathsChange           | `function` | An optional function which accepts 1 argument `pathsCount`, which indicates the number of paths. Useful for UI controls. (Thanks to toblerpwn)                                                                                                                                                                                              |
 | user                    |  `string`  | An identifier to identify who draws the path. Useful when undo between two users                                                                                                                                                                                                                                                            |
 | touchEnabled            |   `bool`   | If false, disable touching. Default is true.                                                                                                                                                                                                                                                                                                |
-| localSourceImage        |  `object`  | Require an object (see [below](#objects)) which consists of `filename`, `directory`(optional) and `mode`(optional). If set, the image will be loaded and display as a background in canvas. (Thanks to diego-caceres-galvan))([Here](#background-image) for details)                                                                        |
+| localSourceImage        |  `object`  | Require an object (see [below](#objects)) which consists of `filename`, `directory`(optional) and `mode`(optional). If set, the image will be loaded and display as a background in canvas. (Thanks to diego-caceres-galvan)([Here](#background-image) for details)                                                                         |
 | permissionDialogTitle   |  `string`  | Android Only: Provide a Dialog Title for the Image Saving PermissionDialog. Defaults to empty string if not set                                                                                                                                                                                                                             |
 | permissionDialogMessage |  `string`  | Android Only: Provide a Dialog Message for the Image Saving PermissionDialog. Defaults to empty string if not set                                                                                                                                                                                                                           |
 
@@ -129,90 +121,102 @@ AppRegistry.registerComponent("example", () => example);
 <img src="https://i.imgur.com/O0vVdD6.png" height="400" />
 
 ```javascript
-import React, { Component } from "react";
 import { AppRegistry, StyleSheet, Text, View, Alert } from "react-native";
-
 import RNSketchCanvas from "@csaurabh/react-native-sketch-canvas";
 
-export default class example extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection: "row" }}>
-          <RNSketchCanvas
-            containerStyle={{ backgroundColor: "transparent", flex: 1 }}
-            canvasStyle={{ backgroundColor: "transparent", flex: 1 }}
-            defaultStrokeIndex={0}
-            defaultStrokeWidth={5}
-            closeComponent={
-              <View style={styles.functionButton}>
-                <Text style={{ color: "white" }}>Close</Text>
-              </View>
-            }
-            undoComponent={
-              <View style={styles.functionButton}>
-                <Text style={{ color: "white" }}>Undo</Text>
-              </View>
-            }
-            clearComponent={
-              <View style={styles.functionButton}>
-                <Text style={{ color: "white" }}>Clear</Text>
-              </View>
-            }
-            eraseComponent={
-              <View style={styles.functionButton}>
-                <Text style={{ color: "white" }}>Eraser</Text>
-              </View>
-            }
-            strokeComponent={(color) => (
+export default () => {
+  return (
+    <View style={styles.container}>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <RNSketchCanvas
+          containerStyle={{ backgroundColor: "transparent", flex: 1 }}
+          canvasStyle={{ backgroundColor: "transparent", flex: 1 }}
+          defaultStrokeIndex={0}
+          defaultStrokeWidth={5}
+          closeComponent={
+            <View style={styles.functionButton}>
+              <Text style={{ color: "white" }}>Close</Text>
+            </View>
+          }
+          undoComponent={
+            <View style={styles.functionButton}>
+              <Text style={{ color: "white" }}>Undo</Text>
+            </View>
+          }
+          clearComponent={
+            <View style={styles.functionButton}>
+              <Text style={{ color: "white" }}>Clear</Text>
+            </View>
+          }
+          eraseComponent={
+            <View style={styles.functionButton}>
+              <Text style={{ color: "white" }}>Eraser</Text>
+            </View>
+          }
+          strokeComponent={(color) => (
+            <View
+              style={[{ backgroundColor: color }, styles.strokeColorButton]}
+            />
+          )}
+          strokeSelectedComponent={(color, index, changed) => {
+            return (
               <View
-                style={[{ backgroundColor: color }, styles.strokeColorButton]}
+                style={[
+                  { backgroundColor: color, borderWidth: 2 },
+                  styles.strokeColorButton,
+                ]}
               />
-            )}
-            strokeSelectedComponent={(color, index, changed) => {
-              return (
+            );
+          }}
+          strokeWidthComponent={(w) => {
+            return (
+              <View style={styles.strokeWidthButton}>
                 <View
-                  style={[
-                    { backgroundColor: color, borderWidth: 2 },
-                    styles.strokeColorButton,
-                  ]}
+                  style={{
+                    backgroundColor: "white",
+                    marginHorizontal: 2.5,
+                    width: Math.sqrt(w / 3) * 10,
+                    height: Math.sqrt(w / 3) * 10,
+                    borderRadius: (Math.sqrt(w / 3) * 10) / 2,
+                  }}
                 />
-              );
-            }}
-            strokeWidthComponent={(w) => {
-              return (
-                <View style={styles.strokeWidthButton}>
-                  <View
-                    style={{
-                      backgroundColor: "white",
-                      marginHorizontal: 2.5,
-                      width: Math.sqrt(w / 3) * 10,
-                      height: Math.sqrt(w / 3) * 10,
-                      borderRadius: (Math.sqrt(w / 3) * 10) / 2,
-                    }}
-                  />
-                </View>
-              );
-            }}
-            saveComponent={
-              <View style={styles.functionButton}>
-                <Text style={{ color: "white" }}>Save</Text>
               </View>
-            }
-            savePreference={() => {
-              return {
-                folder: "RNSketchCanvas",
-                filename: String(Math.ceil(Math.random() * 100000000)),
-                transparent: false,
-                imageType: "png",
-              };
-            }}
-          />
-        </View>
+            );
+          }}
+          saveComponent={
+            <View style={styles.functionButton}>
+              <Text style={{ color: "white" }}>Save</Text>
+            </View>
+          }
+          savePreference={() => {
+            return {
+              folder: "RNSketchCanvas",
+              filename: String(Math.ceil(Math.random() * 100000000)),
+              transparent: false,
+              imageType: "png",
+            };
+          }}
+          onStrokeEnd={(data) => {}}
+          onUndoPressed={(id) => {
+            // Alert.alert('do something')
+          }}
+          onClearPressed={() => {
+            // Alert.alert('do something')
+          }}
+          onSketchSaved={(success, path) => {
+            // Alert.alert(
+            //   success ? "Image saved!" : "Failed to save image!",
+            //   path
+            // );
+          }}
+          onPathsChange={(pathsCount) => {
+            // console.log("pathsCount", pathsCount);
+          }}
+        />
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -447,14 +451,6 @@ Note: Because native module cannot read the file in JS bundle, file path cannot 
   <img src="https://i.imgur.com/YQ2wVMc.jpg" height="400" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/CuIar4h.jpg" height="400" />
 - iOS (https://youtu.be/_jO4ky400Eo)<br/>
   <img src="https://i.imgur.com/AwkFu94.png" height="400" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/UDcaiaz.png" height="400" />
-
-## Example
-
----
-
-The source code includes 3 examples, using build-in UI components, using with only canvas, and sync between two canvases.
-
-Check full example app in the [example](./example) folder
 
 ## Troubleshooting
 
